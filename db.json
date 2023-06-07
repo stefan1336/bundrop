@@ -1,0 +1,125 @@
+{
+  "menu": [
+    {
+      "id": 1,
+      "name": "Classic American",
+      "category": "Hamburger",
+      "type": "Meat",
+      "description": "A juicy beef patty topped with fresh lettuce, ripe tomatoes, melted cheese, and tangy pickles.",
+      "image": "burger-1.webp",
+      "price": 10
+    },
+    {
+      "id": 2,
+      "name": "BBQ Deluxe",
+      "category": "Hamburger",
+      "type": "Meat",
+      "description": "Succulent beef patty, crispy bacon, melted cheese, caramelized onions, and our signature BBQ sauce.",
+      "image": "burger-2.webp",
+      "price": 10
+    },
+    {
+      "id": 3,
+      "name": "Fiery Jalapeño",
+      "type": "Meat",
+      "description": "Flame-grilled beef patty topped with jalapeño peppers, pepper jack cheese, spicy mayo.",
+      "image": "burger-3.webp",
+      "price": 10
+    },
+    {
+      "id": 4,
+      "name": "The Big 'n' Juicy",
+      "type": "Meat",
+      "description": "A double beef patty, crispy bacon, melted cheese, fresh lettuce, tomato, and our special sauce.",
+      "image": "burger-4.webp",
+      "price": 10
+    },
+    {
+      "id": 5,
+      "name": "Swiss Melt",
+      "type": "Meat",
+      "description": "A juicy beef patty smothered in melted Swiss cheese, caramelized onions, sautéed mushrooms.",
+      "image": "burger-5.webp",
+      "price": 10
+    },
+    {
+      "id": 6,
+      "name": "Veggie Bliss",
+      "type": "Vegetarian",
+      "description": "Packed with grilled vegetables, avocado, lettuce, tomato, and a drizzle of zesty herb sauce.",
+      "image": "burger-6.webp",
+      "price": 10
+    },
+    {
+      "id": 7,
+      "name": "Garden Gastronomy",
+      "type": "Vegetarian",
+      "description": "Topped with crisp lettuce, juicy tomatoes, sliced cucumbers, and our signature garden sauce.",
+      "image": "burger-7.webp",
+      "price": 10
+    },
+    {
+      "id": 8,
+      "name": "Dirty Fries",
+      "category": "Side",
+      "type": "Meat",
+      "description": "A combination of crispy french fries topped with melted cheese, crispy bacon bits.",
+      "image": "sides-1.webp",
+      "price": 10
+    },
+    {
+      "id": 9,
+      "name": "Amazing Fries",
+      "category": "Side",
+      "type": "Meat",
+      "description": "Crispy on the outside, and fluffy on the inside, making them the ultimate sidekick to any burger.",
+      "image": "sides-2.webp",
+      "price": 10
+    },
+    {
+      "id": 10,
+      "name": "Vanilla ice-cream",
+      "category": "Side",
+      "type": "Vegan",
+      "description": "Just regular vanilla ice-cream.",
+      "image": "sides-3.webp",
+      "price": 10
+    },
+    {
+      "id": 11,
+      "name": "Frida",
+      "category": "Drink",
+      "type": "Beer",
+      "description": "A refreshing and flavorful beer. This golden brew offers a smooth and crisp taste",
+      "image": "drink-1.png",
+      "price": 10
+    },
+    {
+      "id": 12,
+      "name": "Olipop",
+      "category": "Drink",
+      "type": "Soda",
+      "description": "This delightful soda is a refreshing beverage that will tantalize your taste buds with every sip.",
+      "image": "drink-2.png",
+      "price": 10
+    },
+    {
+      "id": 13,
+      "name": "Calpis",
+      "category": "Drink",
+      "type": "Energy Drink",
+      "description": "A revitalizing energy drink. This drink is designed to keep you focused and energized throughout your day.",
+      "image": "drink-3.png",
+      "price": 10
+    },
+    {
+      "id": 14,
+      "name": "Tropical Bliss",
+      "category": "Drink",
+      "type": "Iced Tea",
+      "description": "Transport yourself to a tropical paradise with every sip of our Tropical Bliss Iced Tea.",
+      "image": "drink-4.png",
+      "price": 10
+    }
+  ]
+}

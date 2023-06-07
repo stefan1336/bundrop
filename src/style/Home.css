@@ -1,0 +1,56 @@
+.home-container {
+  display: grid;
+  grid-template-columns: 35% 50%;
+  align-items: stretch;
+  justify-items: center;
+  justify-content: center;
+}
+
+.flex-column {
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.menu-btn {
+  font-size: x-large;
+  font-family: "Luckiest Guy", cursive;
+  background-color: #c1da35;
+  color: #2d2d2d;
+  width: 200px;
+  height: 80px;
+  border-radius: 50px;
+  margin-top: 20px;
+  margin-left: 12px;
+  margin-bottom: 20px;
+  border: 2px solid black;
+  transition: all 0.8s ease-out 0.1s;
+}
+
+.menu-btn:hover {
+  color: #ffa07a;
+  transform: rotate(20deg);
+  background-color: #2d2d2d;
+  cursor: pointer;
+}
+
+.home-image {
+  max-width: 100%;
+  height: auto;
+  justify-content: end;
+}
+
+.home-container a {
+  font-size: 20px;
+}
+
+h2 {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 40px;
+}
+
+.r-style {
+  font-family: "Times New Roman", Times, serif;
+  color: black;
+  font-size: small !important;
+}

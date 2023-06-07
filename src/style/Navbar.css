@@ -1,0 +1,38 @@
+.nav-container {
+  background-color: #2d2d2d;
+  width: 100%;
+  color: #ffa07a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-container {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-right: 70px;
+}
+
+.header-container h1 {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 50px;
+}
+
+a {
+  text-decoration: none;
+  color: #ffa07a;
+}
+
+.logo-image {
+  width: 100px;
+  margin: 10px;
+}
+
+.item-style {
+  transition: all 0.8s ease-out 0.1s;
+}
+
+.item-style:hover {
+  transform: rotate(5deg);
+}
