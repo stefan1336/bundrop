@@ -85,7 +85,7 @@ function Modal(props) {
           <h1 className="modal-header">Swish</h1>
           <input
             className="swish-input"
-            type="text"
+            type="number"
             placeholder="Number"
             value={phoneNumber}
             onChange={(e) => setPhonenumber(e.target.value)}
@@ -126,24 +126,24 @@ function Modal(props) {
     return (
       <div className="modal-container" onClick={toggleModal}>
         <div className="modal-content">
-          <h1 className="modal-header">Pay with card</h1>
-          <div>
-            <p className="cardnumber-message" href="">
-              {cardErrorMessage}
-            </p>
+          <div className="card-div">
+            {" "}
+            <h1 className="modal-header">Pay with card</h1>
             <input
               className="mc-input"
-              type="text"
+              type="number"
               placeholder="Card number"
               value={cardNumber}
               onChange={(e) => setCardNumber(e.target.value)}
               onClick={validateCard}
             />
-
+            <p className="cardnumber-message" href="">
+              {cardErrorMessage}
+            </p>
             <div className="cardnumber-inputs">
               <input
                 className="my-input"
-                type="text"
+                type="number"
                 placeholder="m/y"
                 value={myNumber}
                 onClick={validateMonthYear}
@@ -156,7 +156,7 @@ function Modal(props) {
 
               <input
                 className="cvc-input"
-                type="text"
+                type="number"
                 placeholder="cvc"
                 value={cvc}
                 onClick={validateCvc}
@@ -166,21 +166,21 @@ function Modal(props) {
                 {cvcErrorMessage}
               </p>
             </div>
+            <button
+              onClick={pay}
+              disabled={
+                !cardNumber ||
+                !myNumber ||
+                !cvc ||
+                cardNumber.length !== 16 ||
+                myNumber.length !== 4 ||
+                cvc.length !== 3
+              }
+              className="mc-btn"
+            >
+              Pay
+            </button>
           </div>
-          <button
-            onClick={pay}
-            disabled={
-              !cardNumber ||
-              !myNumber ||
-              !cvc ||
-              cardNumber.length !== 16 ||
-              myNumber.length !== 4 ||
-              cvc.length !== 3
-            }
-            className="mc-btn"
-          >
-            Pay
-          </button>
         </div>
       </div>
     );

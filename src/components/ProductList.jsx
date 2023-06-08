@@ -20,7 +20,6 @@ function ProductList() {
 
     if (existingItem) {
       existingItem.quantity++;
-      existingItem.price += product.price;
     } else {
       let item = {
         name: product.name,

@@ -13,10 +13,10 @@ function Cart() {
   }, []);
 
   useEffect(() => {
-    const price = cartItems.reduce((total, item) => {
+    const getprice = cartItems.reduce((total, item) => {
       return total + item.price * item.quantity;
     }, 0);
-    setPrice(price);
+    setPrice(getPrice);
   }, [cartItems]);
 
   function removeProduct(name) {
@@ -29,7 +29,6 @@ function Cart() {
   }
 
   const addOneProduct = (cartItem) => {
-    console.log(cartItem);
     const localStorageCartItems =
       JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -40,7 +39,6 @@ function Cart() {
     localStorage.setItem("cart", JSON.stringify(localStorageCartItems));
     setCartItems(localStorageCartItems);
   };
-
   const removeOneProduct = (cartItem) => {
     const localStorageCartItems =
       JSON.parse(localStorage.getItem("cart")) || [];
@@ -57,7 +55,7 @@ function Cart() {
     );
 
     localStorage.setItem("cart", JSON.stringify(filteredCartItems));
-    setCartItems(filteredCartItems);
+    setCartItems([...filteredCartItems]);
   };
 
   return (
