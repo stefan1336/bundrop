@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import images from "../images/logo-color.png";
 import Hamburger from "./Hamburger";
 import { useEffect, useState } from "react";
 

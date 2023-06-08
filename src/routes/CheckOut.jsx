@@ -7,9 +7,14 @@ function CheckOut() {
   const [modalVisible, setModalVisible] = useState(false);
   const [customer, setCustomer] = useState({});
   const [paymentMethod, setPaymentMethod] = useState("");
-  const [cart, setCart] = useState(
-    JSON.parse(localStorage.getItem("cart") || [])
-  );
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+    setCartItems(cartItems);
+  }, []);
+
   const [errors, setErrors] = useState([
     { name: "firstName" },
     { name: "lastName" },
@@ -29,7 +34,7 @@ function CheckOut() {
       if (input.length >= 2) {
         validateInput(propertyName);
       } else {
-        const errorMessage = "Måste vara längre än 1 bokstav!";
+        const errorMessage = "Must be longer than 1 letter!";
 
         invalidateInput(propertyName, errorMessage);
       }
@@ -37,7 +42,7 @@ function CheckOut() {
       if (input.length >= 6) {
         validateInput(propertyName);
       } else {
-        const errorMessage = "Måste vara längre än 5 bokstäver!";
+        const errorMessage = "Must be longer than 5 letters!";
 
         invalidateInput(propertyName, errorMessage);
       }
@@ -45,7 +50,7 @@ function CheckOut() {
       if (input.length >= 9) {
         validateInput(propertyName);
       } else {
-        const errorMessage = "Måste vara längre än 8 bokstäver!";
+        const errorMessage = "Must be longer than 8 letters!";
 
         invalidateInput(propertyName, errorMessage);
       }
@@ -53,7 +58,7 @@ function CheckOut() {
       if (input.length >= 5) {
         validateInput(propertyName);
       } else {
-        const errorMessage = "Måste vara längre än 5 siffror!";
+        const errorMessage = "Must be longer than 5 digits!";
 
         invalidateInput(propertyName, errorMessage);
       }
@@ -70,7 +75,6 @@ function CheckOut() {
         updatedErrors.find((e) => e.name === propertyName)
       );
 
-      // Remove error for property
       updatedErrors.splice(errIndex, 1);
 
       setErrors(updatedErrors);
@@ -117,7 +121,7 @@ function CheckOut() {
     setModalVisible(!modalVisible);
   }
 
-  if (cart.length > 0) {
+  if (cartItems.length > 0) {
     return (
       <div>
         {modalVisible ? (
@@ -148,8 +152,13 @@ function CheckOut() {
                     />
                     {errors
                       .filter((e) => e.name === "firstName")
-                      .map((e) => (
-                        <span className="span-style">{e.message}</span>
+                      .map((e, index) => (
+                        <span
+                          key={index}
+                          className="span-style first-name-error"
+                        >
+                          {e.message}
+                        </span>
                       ))}
                     <input
                       className="input-style"
@@ -161,8 +170,13 @@ function CheckOut() {
                     />
                     {errors
                       .filter((e) => e.name === "lastName")
-                      .map((e) => (
-                        <span className="span-style">{e.message}</span>
+                      .map((e, index) => (
+                        <span
+                          key={index}
+                          className="span-style second-name-error"
+                        >
+                          {e.message}
+                        </span>
                       ))}
                     <input
                       className="input-style "
@@ -174,8 +188,13 @@ function CheckOut() {
                     />
                     {errors
                       .filter((e) => e.name === "city")
-                      .map((e) => (
-                        <span className="span-style">{e.message}</span>
+                      .map((e, index) => (
+                        <span
+                          key={index}
+                          className="span-style city-name-error"
+                        >
+                          {e.message}
+                        </span>
                       ))}
                   </div>
                 </div>
@@ -191,8 +210,10 @@ function CheckOut() {
                   />
                   {errors
                     .filter((e) => e.name === "adress")
-                    .map((e) => (
-                      <span className="span-style">{e.message}</span>
+                    .map((e, index) => (
+                      <span key={index} className="span-style adress-error">
+                        {e.message}
+                      </span>
                     ))}
                   <input
                     className="input-style"
@@ -205,8 +226,10 @@ function CheckOut() {
                   />
                   {errors
                     .filter((e) => e.name === "zip")
-                    .map((e) => (
-                      <span className="span-style">{e.message}</span>
+                    .map((e, index) => (
+                      <span key={index} className="span-style zip-error">
+                        {e.message}
+                      </span>
                     ))}
                 </div>
                 <div className="btn-container flex-container">

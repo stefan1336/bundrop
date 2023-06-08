@@ -1,8 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// Import icons:
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faHouse } from "@fortawesome/free-solid-svg-icons";
 
 function Home() {
   return (
@@ -11,7 +8,6 @@ function Home() {
         <h2>
           Welcome to Bun Drop! <a className="r-style">®</a>
         </h2>
-
         <a>The future of burger delivery!</a>
         <br />
         <em>

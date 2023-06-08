@@ -11,8 +11,7 @@ function ProductList() {
   }, []);
 
   function addToLocalStorage(id) {
-    // öka quantity med 1 om id matchar
-    // Hämta produkten i min databas där id stämmer överrens
+
     const product = allProducts.find((product) => product.id === id);
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -20,7 +19,6 @@ function ProductList() {
     const existingItem = cart.find((item) => item.name === product.name);
 
     if (existingItem) {
-      // existingItem.price = +product.price;
       existingItem.quantity++;
       existingItem.price += product.price;
     } else {
@@ -34,9 +32,6 @@ function ProductList() {
       };
       cart.push(item);
     }
-
-    // letar efter cart i localstorage, om det inte finns så skapas en tom array
-    // let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
     localStorage.setItem("cart", JSON.stringify(cart));
   }

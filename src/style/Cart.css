@@ -2,8 +2,6 @@
   display: grid;
   width: 800px;
   grid-template-columns: repeat(3, 1fr);
-  /* grid-template-columns: 20% 20%; */
-  /* grid-template: auto; */
   text-align: center;
   gap: 10px;
   margin-top: 50px;
@@ -37,31 +35,17 @@
   right: 1rem;
   top: 1rem;
   font-size: large;
-  /* width: 90px;
-  height: 31px;
-  border-radius: 20px;
-  color: #2d2d2d;
-  background-color: red; */
   background-color: transparent;
   color: #ff0000;
   border: none;
-  /* opacity: 0.5; */
-  /* border: 2px solid black; */
 }
 
 .remove-btn:hover {
   cursor: pointer;
-  /* border-radius: 20px; */
-  /* color: black; */
-  /* background-color: red; */
-  /* opacity: 1; */
-  /* border: 2px solid black; */
 }
 
 .quantity {
   color: #ffffff;
-  /* position: absolute;*/
-  /* right: 40rem;  */
 }
 
 .order-btn {
@@ -72,16 +56,10 @@
   width: 80px;
   height: 37px;
   opacity: 0.8;
-  /* right: 15rem;
-  top: 13rem; */
-  /* right: 0; */
-  /* margin: 130px; */
   border: none;
   font-size: medium;
   border: 2px solid #2d2d2d;
   font-family: "Luckiest Guy", cursive;
-  /* top: 96rem; */
-  /* top: 10rem; */
 }
 
 .order-btn:hover {
@@ -96,13 +74,6 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
-  /* align-content: center; */
-  /* justify-content: center; */
-  /* justify-items: center; */
-
-  /*align-items: end;
-  justify-content: end; */
-  /* margin: 30px; */
 }
 
 .quantity-style {
@@ -120,7 +91,6 @@
   color: black;
   background-color: transparent;
   border: none;
-  /* margin-left: 40px; */
   color: greenyellow;
 }
 

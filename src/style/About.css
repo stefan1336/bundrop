@@ -2,18 +2,13 @@
   display: grid;
   grid-template-columns: 40% 50%;
   align-items: stretch;
-  /* justify-items: center; */
   justify-content: center;
-  /* margin: 0; */
-  /* margin-bottom: 20px; */
-  /* align-items: center; */
   margin-bottom: 20px;
 }
 
 .about-image {
   width: 100%;
   height: 100%;
-  /* justify-content: end; */
 }
 
 .about-text {

@@ -98,12 +98,10 @@
   align-items: center;
   justify-content: center;
   margin-left: 100px;
-  /* grid-template-columns: repeat(4, 1fr); */
   border-radius: 18px;
   height: 200px;
   width: 260px;
   color: whitesmoke;
-  /* margin-bottom: 10px; */
 }
 
 .checkout-order-display {
@@ -127,12 +125,50 @@
 
 .span-style {
   color: red;
-  font-size: x-small;
-  /* display: flex; */
+  font-size: xx-small;
   align-items: center;
   justify-content: center;
 }
 
 .error-message {
   color: red;
+}
+
+.first-name-error {
+  position: absolute;
+  color: red;
+  font-size: 7px;
+
+  margin: 45px 0px;
+}
+
+.second-name-error {
+  position: absolute;
+  color: red;
+  font-size: 7px;
+
+  margin: 108px 0px;
+}
+
+.city-name-error {
+  position: absolute;
+  color: red;
+  font-size: 7px;
+
+  margin: 170px 0px;
+}
+
+.adress-error {
+  position: absolute;
+  color: red;
+  font-size: 7px;
+
+  margin: 45px 0px;
+}
+
+.zip-error {
+  position: absolute;
+  color: red;
+  font-size: 7px;
+  margin: 45px 150px;
 }

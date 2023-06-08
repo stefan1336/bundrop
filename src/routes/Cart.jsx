@@ -1,13 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import CartCard from "../components/CartCard";
-import ProductList from "../components/ProductList";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faX } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
-import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
-import ProductCard from "../components/ProductCard";
 
 function Cart() {
   const [cartItems, setCartItems] = useState([]);

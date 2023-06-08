@@ -10,6 +10,8 @@ function Modal(props) {
   const [cvc, setCvc] = useState("");
   const [swishErrorMessage, setSwishErrorMessage] = useState("");
   const [cardErrorMessage, setCardErrorMessage] = useState("");
+  const [monthYearErrorMessage, setMonthYearErrorMessage] = useState("");
+  const [cvcErrorMessage, setCvcErrorMessage] = useState("");
 
   function toggleModal(e) {
     if (e.target.classList.contains("modal-container")) {
@@ -17,21 +19,33 @@ function Modal(props) {
     }
   }
 
-  const validateSwish = (phoneNumber) => {
+  const validateSwish = () => {
     if (!phoneNumber) {
-      alert("Please enter your phone number.");
-    } else if (phoneNumber.length !== 7) {
-      setSwishErrorMessage("Swish number should have 7 numbers.");
+      setSwishErrorMessage("Please enter 7 digits.");
     } else {
       setSwishErrorMessage("");
     }
   };
 
+  const validateMonthYear = () => {
+    if (!myNumber) {
+      setMonthYearErrorMessage("Please enter 4 digits");
+    } else {
+      setMonthYearErrorMessage("");
+    }
+  };
+
+  const validateCvc = () => {
+    if (!cvc) {
+      setCvcErrorMessage("Please enter 3 digits");
+    } else {
+      setCvcErrorMessage("");
+    }
+  };
+
   const validateCard = () => {
     if (!cardNumber || !myNumber || !cvc) {
-      setCardErrorMessage("Please fill all card details.");
-
-      //   setCardInputs(false);
+      setCardErrorMessage("Please enter 16 digits.");
     } else if (cardNumber.length !== 16 || myNumber !== 4 || cvc !== 3) {
       setCardErrorMessage("I reapeat, please fill all card details...");
     } else {
@@ -40,18 +54,11 @@ function Modal(props) {
   };
 
   function pay() {
-    validateSwish(phoneNumber);
-    console.log("gabbe");
     if (props.paymentMethod === "swish") {
-      if (phoneNumber && phoneNumber.length === 7 && !swishErrorMessage) {
-        navigate("/summary");
-      }
+      navigate("/summary");
     }
     if (props.paymentMethod === "card") {
-      validateCard();
-      if (cardNumber && myNumber && cvc && !cardErrorMessage) {
-        navigate("/summary");
-      }
+      navigate("/summary");
     }
     if (props.paymentMethod === "klarna") {
       navigate("/summary");
@@ -82,13 +89,13 @@ function Modal(props) {
             placeholder="Number"
             value={phoneNumber}
             onChange={(e) => setPhonenumber(e.target.value)}
-          />
-          <a href="">{swishErrorMessage}</a>
-          {swishErrorMessage && (
-            <p className="error-message">{swishErrorMessage}</p>
-          )}
-          <button
             onClick={validateSwish}
+          />
+          <a className="swish-message" href="">
+            {swishErrorMessage}
+          </a>
+          <button
+            onClick={pay}
             disabled={!phoneNumber || phoneNumber.length !== 7}
             className="swish-btn"
           >
@@ -121,28 +128,43 @@ function Modal(props) {
         <div className="modal-content">
           <h1 className="modal-header">Pay with card</h1>
           <div>
+            <p className="cardnumber-message" href="">
+              {cardErrorMessage}
+            </p>
             <input
               className="mc-input"
               type="text"
               placeholder="Card number"
               value={cardNumber}
               onChange={(e) => setCardNumber(e.target.value)}
+              onClick={validateCard}
             />
-            <div className="my-cvc-container">
+
+            <div className="cardnumber-inputs">
               <input
                 className="my-input"
                 type="text"
                 placeholder="m/y"
                 value={myNumber}
+                onClick={validateMonthYear}
                 onChange={(e) => setMYNumber(e.target.value)}
               />
+
+              <p className="validation-message" href="">
+                {monthYearErrorMessage}
+              </p>
+
               <input
                 className="cvc-input"
                 type="text"
                 placeholder="cvc"
                 value={cvc}
+                onClick={validateCvc}
                 onChange={(e) => setCvc(e.target.value)}
               />
+              <p className="cvc-warning" href="">
+                {cvcErrorMessage}
+              </p>
             </div>
           </div>
           <button
