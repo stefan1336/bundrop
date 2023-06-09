@@ -34,7 +34,8 @@ Here you can see our different type of burgers, sides and drinks and add them to
 
 ### Cart Page
 
-Here you can see your current order and if you want to you could add, reduce or even remove your orders.
+Here you can see your current order and if you want to you could add, reduce or even remove your orders. Everything costs 10 $ because our collaboration partners want everyone to be able to afford to eat hamburgers.. For every single order made, Elon Musk
+kick in an extra $90 as a generous donation to Newtons Yrkeshögskola
 
 ### Check Out Page
 
